@@ -1,12 +1,9 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
+    includeBuild("build-logic/convention")
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -21,4 +18,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Shopfinity"
 include(":app")
- 
+include(":core:network")
+include(":core:data")
+include(":core:domain")
+include(":feature")
+include(":feature:product")
+include(":feature:login")
+include(":feature:account")
