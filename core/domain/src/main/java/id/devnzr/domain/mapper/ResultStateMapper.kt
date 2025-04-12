@@ -3,7 +3,7 @@ package id.devnzr.domain.mapper
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import id.devnzr.data.entities.BaseDataSourceApi
-import id.devnzr.data.utils.ResultState
+import id.devnzr.domain.utils.ResultState
 import id.devnzr.data.utils.RetrofitException
 import id.devnzr.data.utils.RetrofitException.Companion.NO_CONNECTION
 import okhttp3.ResponseBody.Companion.toResponseBody

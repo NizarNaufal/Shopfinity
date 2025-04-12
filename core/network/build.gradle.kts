@@ -1,10 +1,9 @@
 import com.android.build.api.variant.BuildConfigField
 
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.serialization)
+    id("devnzr.android.library")
     id("devnzr.okhttp.retrofit")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {

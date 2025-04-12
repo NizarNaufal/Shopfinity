@@ -1,12 +1,10 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("devnzr.android.library")
     id("kotlin-parcelize")
 }
 
 android {
     namespace = "id.devnzr.data"
-    compileSdk = 34
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

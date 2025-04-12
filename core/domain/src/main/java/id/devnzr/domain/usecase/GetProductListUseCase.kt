@@ -1,7 +1,7 @@
 package id.devnzr.domain.usecase
 
 import id.devnzr.data.interfaces.ProductRepositoryContract
-import id.devnzr.data.utils.ResultState
+import id.devnzr.domain.utils.ResultState
 import id.devnzr.domain.entities.ProductEntity
 import id.devnzr.domain.interfaces.GetProductListUseCaseContract
 import id.devnzr.domain.mapper.mapProducts

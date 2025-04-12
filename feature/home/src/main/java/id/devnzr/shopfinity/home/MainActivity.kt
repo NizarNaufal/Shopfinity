@@ -1,4 +1,4 @@
-package id.devnzr.shopfinity.account
+package id.devnzr.shopfinity.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import id.devnzr.shopfinity.account.ui.theme.ShopfinityTheme
+import id.devnzr.shopfinity.home.ui.theme.ShopfinityTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

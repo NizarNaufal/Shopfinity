@@ -1,4 +1,4 @@
-package id.devnzr.shopfinity.account.ui.theme
+package id.devnzr.shopfinity.home.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

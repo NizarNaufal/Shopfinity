@@ -5,4 +5,5 @@ import id.devnzr.data.interfaces.CartsRepositoryContract
 
 class CartsRepository(private val api: CartsApi) : CartsRepositoryContract {
     override suspend fun fetchAllCarts() = api.fetchAllCarts()
+    override suspend fun addCart() = api.addCart()
 }

@@ -1,8 +1,6 @@
 package id.devnzr.domain.mapper
 
-import id.devnzr.data.entities.AllCartsSourceApi
 import id.devnzr.data.entities.AllProductsSourceApi
-import id.devnzr.domain.entities.AllCartsEntity
 import id.devnzr.domain.entities.ProductEntity
 
 fun List<AllProductsSourceApi>.mapProducts(): List<ProductEntity> = map { it.map() }

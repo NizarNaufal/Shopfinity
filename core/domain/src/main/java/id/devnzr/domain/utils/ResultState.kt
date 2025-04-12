@@ -1,4 +1,4 @@
-package id.devnzr.data.utils
+package id.devnzr.domain.utils
 
 sealed class ResultState<T>(
     val data: T? = null,

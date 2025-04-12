@@ -1,11 +1,9 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("devnzr.android.library")
 }
 
 android {
     namespace = "id.devnzr.domain"
-    compileSdk = 34
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -27,4 +25,5 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.bundles.coroutinesDependencies)
     implementation(projects.core.data)
+    implementation(projects.feature)
 }

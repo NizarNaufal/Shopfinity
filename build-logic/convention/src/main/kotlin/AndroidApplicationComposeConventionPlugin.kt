@@ -12,7 +12,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
-                apply("org.jetbrains.kotlin.kapt")
             }
 
             extensions.configure<ApplicationExtension> {
@@ -31,12 +30,6 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
                     }
                 }
 
-            }
-
-
-
-            extensions.configure<KaptExtension> {
-                correctErrorTypes = true
             }
         }
     }

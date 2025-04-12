@@ -19,7 +19,7 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 dependencies {
-    compileOnly("com.android.tools.build:gradle:8.0.0")
+    compileOnly("com.android.tools.build:gradle:8.0.2")
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0")
     compileOnly("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.8.20-1.0.11")
 }

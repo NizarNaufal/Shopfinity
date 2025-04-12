@@ -4,4 +4,5 @@ import id.devnzr.data.entities.AllCartsSourceApi
 
 interface CartsRepositoryContract {
     suspend fun fetchAllCarts(): List<AllCartsSourceApi>
+    suspend fun addCart(): List<AllCartsSourceApi>
 }
