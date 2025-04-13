@@ -1,6 +1,6 @@
 package id.devnzr.domain.interfaces
 
-import id.devnzr.domain.entities.LoginResult
+import id.devnzr.domain.models.LoginResult
 import id.devnzr.domain.utils.ResultState
 import kotlinx.coroutines.flow.Flow
 

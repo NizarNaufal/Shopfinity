@@ -13,7 +13,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -23,8 +22,6 @@ import id.devnzr.shopfinity.account.screen.AccountNavigation
 import id.devnzr.shopfinity.account.screen.accountScreen
 import id.devnzr.shopfinity.home.screen.HomeNavigation
 import id.devnzr.shopfinity.home.screen.homeScreen
-import id.devnzr.shopfinity.login.screen.LoginNavigation
-import id.devnzr.shopfinity.login.screen.loginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +50,6 @@ fun BottomNavHost() {
         ) {
             homeScreen(navController)
             accountScreen(navController)
-            loginScreen(navController)
         }
     }
 }
@@ -73,12 +69,12 @@ fun BottomNavigationBar(navController: NavHostController) {
             label = { Text("Account") },
             icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Account") }
         )
-        BottomNavigationItem(
-            selected = currentDestination(navController) == LoginNavigation::class.simpleName.orEmpty(),
-            onClick = { navController.navigate(LoginNavigation::class.qualifiedName.orEmpty()) },
-            label = { Text("Login") },
-            icon = { Icon(Icons.Default.Lock, contentDescription = "Login") }
-        )
+//        BottomNavigationItem(
+//            selected = currentDestination(navController) == LoginNavigation::class.simpleName.orEmpty(),
+//            onClick = { navController.navigate(LoginNavigation::class.qualifiedName.orEmpty()) },
+//            label = { Text("Login") },
+//            icon = { Icon(Icons.Default.Lock, contentDescription = "Login") }
+//        )
     }
 }
 

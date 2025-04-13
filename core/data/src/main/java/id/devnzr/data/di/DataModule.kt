@@ -33,6 +33,6 @@ val repositoryModule = module {
         CartsRepository(get())
     }
     single<AuthRepositoryContract> {
-        AuthRepository(get())
+        AuthRepository(get(), get())
     }
 }

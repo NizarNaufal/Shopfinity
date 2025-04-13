@@ -5,7 +5,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import java.net.UnknownHostException
 
-suspend fun <R> Throwable.toResultStateError(): ResultState.Error<R> {
+fun <R> Throwable.toResultStateError(): ResultState.Error<R> {
     return when (this) {
         is UnknownHostException -> {
             ResultState.Error(

@@ -33,7 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import id.devnzr.domain.entities.Account
+import id.devnzr.domain.models.Account
 import id.devnzr.domain.utils.ResultState
 import id.devnzr.extension.OnEvent
 import id.devnzr.shopfinity.account.screen.components.UserItemComponent

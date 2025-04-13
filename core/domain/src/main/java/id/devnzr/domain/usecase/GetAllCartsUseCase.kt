@@ -2,7 +2,7 @@ package id.devnzr.domain.usecase
 
 import id.devnzr.data.interfaces.CartsRepositoryContract
 import id.devnzr.domain.utils.ResultState
-import id.devnzr.domain.entities.AllCartsEntity
+import id.devnzr.domain.models.AllCartsEntity
 import id.devnzr.domain.interfaces.GetAllCartsUseCaseContract
 import id.devnzr.domain.mapper.mapCarts
 import id.devnzr.domain.mapper.responseErrorToResultStateError

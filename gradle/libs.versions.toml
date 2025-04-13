@@ -1,6 +1,7 @@
 [versions]
 compileSdk = "35"
 minSdk = "24"
+protobufJavalite = "3.21.11"
 targetSdk = "34"
 
 agp = "8.6.0"
@@ -14,9 +15,17 @@ kotlinSerialization = "1.6.0"
 gson = "2.6.0"
 chucker = "3.5.2"
 coroutines = "1.9.0"
+coreKtx = "1.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
 
 [libraries]
 # Kotlin
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
+androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "dataStore" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 # Coil
@@ -35,7 +44,7 @@ chucker-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", versi
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieVersion" }
 
 # Data Store
-androidx-datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "dataStore" }
+androidx-datastore-pref = { module = "androidx.datastore:datastore-preferences", version.ref = "dataStore" }
 
 # Koin
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
@@ -44,15 +53,18 @@ koin-navigation-compose = { module = "io.insert-koin:koin-androidx-compose-navig
 
 # Gson
 gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gson" }
+protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobufJavalite" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [bundles]
 supportDependencies = [
     "coil",
     "lottie-compose"
-]
-
-dataDependencies = [
-    "androidx-datastore",
 ]
 
 koinDependencies = [

@@ -1,11 +1,11 @@
 package id.devnzr.domain.mapper
 
-import id.devnzr.data.models.response.AllProductsResponse
-import id.devnzr.domain.entities.ProductEntity
+import id.devnzr.domain.models.ProductEntity
+import id.devnzr.data.models.Products
 
-fun List<AllProductsResponse>.mapProducts(): List<ProductEntity> = map { it.map() }
+fun List<Products>.mapProducts(): List<ProductEntity> = map { it.map() }
 
-fun AllProductsResponse.map(): ProductEntity {
+fun Products.map(): ProductEntity {
     return ProductEntity(
         id = this.id ?: 0,
         title = this.title ?: "",

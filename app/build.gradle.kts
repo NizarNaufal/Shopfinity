@@ -48,10 +48,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.koinDependencies)
     implementation(projects.core.data)
+    implementation(projects.core.datastore)
     implementation(projects.core.domain)
     implementation(projects.core.network)
+    implementation(projects.core.extension)
     implementation(projects.feature.account)
     implementation(projects.feature.home)
     implementation(projects.feature.login)

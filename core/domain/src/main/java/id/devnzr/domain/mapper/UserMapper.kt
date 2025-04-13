@@ -1,10 +1,9 @@
 package id.devnzr.domain.mapper
 
-import id.devnzr.data.models.request.LoginRequest
 import id.devnzr.data.models.response.LoginResponse
 import id.devnzr.data.models.response.UserResponse
-import id.devnzr.domain.entities.LoginResult
-import id.devnzr.domain.entities.UserEntity
+import id.devnzr.domain.models.LoginResult
+import id.devnzr.domain.models.UserEntity
 
 fun UserResponse.map(): UserEntity {
     return UserEntity(

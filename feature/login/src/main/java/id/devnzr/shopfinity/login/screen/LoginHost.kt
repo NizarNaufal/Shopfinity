@@ -16,6 +16,6 @@ internal fun LoginHost() {
         navController = navController,
         startDestination = LoginNavigation,
     ) {
-        loginScreen(navController = navController)
+        loginScreen()
     }
 }

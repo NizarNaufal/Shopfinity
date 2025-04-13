@@ -1,6 +1,6 @@
 package id.devnzr.shopfinity.login.screen
 
-import id.devnzr.domain.entities.LoginResult
+import id.devnzr.domain.models.LoginResult
 import id.devnzr.domain.utils.ResultState
 
 data class TextFieldState(

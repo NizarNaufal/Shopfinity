@@ -12,4 +12,6 @@ interface AuthRepositoryContract {
     suspend fun login(
         body: LoginRequest
     ): LoginResponse
+
+    suspend fun checkToken(): String
 }

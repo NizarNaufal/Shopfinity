@@ -1,6 +1,6 @@
 package id.devnzr.shopfinity.home.screen
 
-import id.devnzr.domain.entities.ProductEntity
+import id.devnzr.domain.models.ProductEntity
 import id.devnzr.domain.utils.ResultState
 
 data class HomeState(

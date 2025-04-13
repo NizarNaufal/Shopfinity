@@ -2,7 +2,7 @@ package id.devnzr.domain.usecase
 
 import id.devnzr.data.interfaces.AuthRepositoryContract
 import id.devnzr.domain.utils.ResultState
-import id.devnzr.domain.entities.UserEntity
+import id.devnzr.domain.models.UserEntity
 import id.devnzr.domain.interfaces.GetUserUseCaseContract
 import id.devnzr.domain.mapper.map
 import id.devnzr.domain.mapper.responseErrorToResultStateError
