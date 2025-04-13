@@ -25,5 +25,4 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.bundles.coroutinesDependencies)
     implementation(projects.core.data)
-    implementation(projects.feature)
 }

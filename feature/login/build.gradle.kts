@@ -1,5 +1,6 @@
 plugins {
     id("devnzr.android.library.compose")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -22,5 +23,8 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.domain)
     implementation(libs.bundles.koinDependencies)
+    implementation(projects.core.extension)
+    implementation(libs.kotlinx.serialization.json)
 }

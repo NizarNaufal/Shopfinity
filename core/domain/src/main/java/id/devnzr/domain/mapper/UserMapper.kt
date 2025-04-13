@@ -1,13 +1,22 @@
 package id.devnzr.domain.mapper
 
-import id.devnzr.data.entities.UserSourceApi
+import id.devnzr.data.models.request.LoginRequest
+import id.devnzr.data.models.response.LoginResponse
+import id.devnzr.data.models.response.UserResponse
+import id.devnzr.domain.entities.LoginResult
 import id.devnzr.domain.entities.UserEntity
 
-fun UserSourceApi.map(): UserEntity {
+fun UserResponse.map(): UserEntity {
     return UserEntity(
         id = this.id ?: 0,
         username = this.username ?: "",
         email = this.email ?: "",
         password = this.password ?: "",
+    )
+}
+
+fun LoginResponse.map(): LoginResult {
+    return LoginResult(
+        token = this.token ?: "",
     )
 }

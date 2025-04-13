@@ -6,6 +6,9 @@ import id.devnzr.data.di.dataSourceModule
 import id.devnzr.data.di.repositoryModule
 import id.devnzr.domain.di.useCaseModule
 import id.devnzr.network.di.networkModule
+import id.devnzr.shopfinity.account.di.accountViewModelModule
+import id.devnzr.shopfinity.home.di.homeViewModelModule
+import id.devnzr.shopfinity.login.di.loginViewModelModule
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import org.koin.core.context.startKoin
@@ -26,7 +29,10 @@ class App : Application() {
             dataSourceModule,
             networkModule,
             repositoryModule,
-            useCaseModule
+            useCaseModule,
+            homeViewModelModule,
+            accountViewModelModule,
+            loginViewModelModule,
         )
     }
 }

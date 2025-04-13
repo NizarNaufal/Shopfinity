@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation(projects.core.domain)
+    implementation(projects.core.extension)
     implementation(libs.bundles.koinDependencies)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.supportDependencies)

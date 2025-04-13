@@ -1,7 +1,7 @@
 package id.devnzr.data.interfaces
 
-import id.devnzr.data.entities.AllProductsSourceApi
+import id.devnzr.data.models.response.AllProductsResponse
 
 interface ProductRepositoryContract {
-    suspend fun fetchProductList(): List<AllProductsSourceApi>
+    suspend fun fetchProductList(): List<AllProductsResponse>
 }

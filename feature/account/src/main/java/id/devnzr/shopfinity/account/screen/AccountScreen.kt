@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.devnzr.domain.entities.Account
 import id.devnzr.domain.utils.ResultState
-import id.devnzr.shopfinity.account.ext.OnEvent
+import id.devnzr.extension.OnEvent
 import id.devnzr.shopfinity.account.screen.components.UserItemComponent
 
 @Composable

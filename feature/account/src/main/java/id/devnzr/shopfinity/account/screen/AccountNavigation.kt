@@ -6,14 +6,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import id.devnzr.shopfinity.account.ext.Screen
+import id.devnzr.extension.Screen
 import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
 
 @Serializable
 object AccountNavigation : Screen
 
-internal fun NavGraphBuilder.accountScreen(navController: NavHostController) {
+fun NavGraphBuilder.accountScreen(navController: NavHostController) {
     composable<AccountNavigation> {
         val viewModel: AccountViewModel = koinViewModel()
         val state: AccountState by viewModel.state.collectAsStateWithLifecycle()

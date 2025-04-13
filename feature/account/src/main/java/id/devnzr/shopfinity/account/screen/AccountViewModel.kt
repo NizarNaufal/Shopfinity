@@ -3,7 +3,7 @@ package id.devnzr.shopfinity.account.screen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import id.devnzr.domain.interfaces.GetUserUseCaseContract
-import id.devnzr.shopfinity.account.ext.UiEvent
+import id.devnzr.extension.UiEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
