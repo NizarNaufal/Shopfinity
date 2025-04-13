@@ -1,5 +1,6 @@
 package id.devnzr.shopfinity.home.screen.components
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -28,6 +29,7 @@ import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -45,10 +47,13 @@ internal fun ProductItemComponent(
     modifier: Modifier = Modifier,
     onEvent: OnEvent
 ) {
+   val context = LocalContext.current
+
     Card(
         modifier = modifier
             .padding(4.dp)
             .clickable {
+                Toast.makeText(context, "Produk Berhasil Masuk keranjang", Toast.LENGTH_SHORT).show()
                 onEvent(HomeEvent.OnAddToCart(product))
             },
         elevation = 2.dp,
