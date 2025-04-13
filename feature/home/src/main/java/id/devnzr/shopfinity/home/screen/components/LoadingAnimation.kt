@@ -54,10 +54,11 @@ fun LoadingAnimation(
 
     Row(modifier = modifier) {
         circleValues.forEachIndexed { index, value ->
-            Box(modifier = Modifier
-                .size(circleSize)
-                .graphicsLayer { translationY = -value * distance }
-                .background(color = circleColor, shape = CircleShape)
+            Box(
+                modifier = Modifier
+                    .size(circleSize)
+                    .graphicsLayer { translationY = -value * distance }
+                    .background(color = circleColor, shape = CircleShape)
             )
             if (index != lastCircle) Spacer(modifier = Modifier.width(spaceBetween))
         }

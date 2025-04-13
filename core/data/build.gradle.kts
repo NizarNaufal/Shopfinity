@@ -25,5 +25,6 @@ dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(libs.gson)
     implementation(projects.core.datastore)
+    implementation(projects.core.database)
     implementation(projects.core.network)
 }

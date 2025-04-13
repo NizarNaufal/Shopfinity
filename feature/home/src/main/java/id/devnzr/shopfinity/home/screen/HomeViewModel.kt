@@ -2,7 +2,7 @@ package id.devnzr.shopfinity.home.screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import id.devnzr.domain.interfaces.GetProductListUseCaseContract
+import id.devnzr.domain.interfaces.GetProductListUseCase
 import id.devnzr.extension.UiEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 internal class HomeViewModel(
-    private val getProductListUseCaseContract: GetProductListUseCaseContract
+    private val getProductListUseCase: GetProductListUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeState())
@@ -44,7 +44,7 @@ internal class HomeViewModel(
     private fun fetchProducts() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
-            getProductListUseCaseContract().collect { result ->
+            getProductListUseCase().collect { result ->
                 _state.update {
                     it.copy(
                         resultProduct = result,

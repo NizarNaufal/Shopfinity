@@ -4,6 +4,6 @@ import id.devnzr.domain.utils.ResultState
 import id.devnzr.domain.models.ProductEntity
 import kotlinx.coroutines.flow.Flow
 
-interface GetProductListUseCaseContract {
+interface GetProductListUseCase {
     operator fun invoke(): Flow<ResultState<List<ProductEntity>>>
 }

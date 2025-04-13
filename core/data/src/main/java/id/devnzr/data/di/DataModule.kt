@@ -1,14 +1,13 @@
 package id.devnzr.data.di
 
 import id.devnzr.data.api.AuthApi
-import id.devnzr.data.api.CartsApi
 import id.devnzr.data.api.ProductApi
 import id.devnzr.data.interfaces.AuthRepositoryContract
 import id.devnzr.data.interfaces.CartsRepositoryContract
 import id.devnzr.data.interfaces.ProductRepositoryContract
-import id.devnzr.data.repository.AuthRepository
-import id.devnzr.data.repository.CartsRepository
-import id.devnzr.data.repository.ProductRepository
+import id.devnzr.data.repository.AuthRepositoryImpl
+import id.devnzr.data.repository.CartsRepositoryImpl
+import id.devnzr.data.repository.ProductRepositoryImpl
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -18,21 +17,18 @@ val dataSourceModule = module {
         get<Retrofit>(named("BaseClient")).create(ProductApi::class.java)
     }
     single {
-        get<Retrofit>(named("BaseClient")).create(CartsApi::class.java)
-    }
-    single {
         get<Retrofit>(named("BaseClient")).create(AuthApi::class.java)
     }
 }
 
 val repositoryModule = module {
     single<ProductRepositoryContract> {
-        ProductRepository(get())
+        ProductRepositoryImpl(get())
     }
     single<CartsRepositoryContract> {
-        CartsRepository(get())
+        CartsRepositoryImpl(get())
     }
     single<AuthRepositoryContract> {
-        AuthRepository(get(), get())
+        AuthRepositoryImpl(get(), get())
     }
 }

@@ -7,7 +7,7 @@ import id.devnzr.data.models.response.LoginResponse
 import id.devnzr.datastore.DataStoreManager
 import kotlinx.coroutines.flow.first
 
-class AuthRepository(
+class AuthRepositoryImpl(
     private val api: AuthApi,
     private val dataStore: DataStoreManager
 ) : AuthRepositoryContract {

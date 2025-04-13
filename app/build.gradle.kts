@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(projects.core.data)
     implementation(projects.core.datastore)
+    implementation(projects.core.database)
     implementation(projects.core.domain)
     implementation(projects.core.network)
     implementation(projects.core.extension)
@@ -59,4 +60,5 @@ dependencies {
     implementation(projects.feature.home)
     implementation(projects.feature.login)
     implementation(projects.feature.product)
+    implementation(projects.feature.carts)
 }

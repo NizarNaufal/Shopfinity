@@ -2,14 +2,14 @@ package id.devnzr.shopfinity.account.screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import id.devnzr.domain.interfaces.GetUserUseCaseContract
+import id.devnzr.domain.interfaces.GetUserUseCase
 import id.devnzr.extension.UiEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-internal class AccountViewModel(private val getUserUseCase: GetUserUseCaseContract) : ViewModel() {
+internal class AccountViewModel(private val getUserUseCase: GetUserUseCase) : ViewModel() {
     private val _state = MutableStateFlow(AccountState())
     val state get() = _state.asStateFlow()
 

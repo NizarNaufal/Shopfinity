@@ -1,8 +1,8 @@
 package id.devnzr.data.api
 
-import id.devnzr.data.models.response.UserResponse
 import id.devnzr.data.models.request.LoginRequest
 import id.devnzr.data.models.response.LoginResponse
+import id.devnzr.data.models.response.UserResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -20,5 +20,4 @@ interface AuthApi {
     suspend fun login(
         @Body request: LoginRequest
     ): LoginResponse
-
 }

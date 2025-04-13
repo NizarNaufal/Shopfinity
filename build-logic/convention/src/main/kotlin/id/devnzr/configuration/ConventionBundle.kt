@@ -20,7 +20,8 @@ object ConventionBundle {
     // Android Room
     val roomDependencies = listOf(
         ConventionDependency.androidxRoomRuntime,
-        ConventionDependency.androidxRoomCompiler
+        ConventionDependency.androidxRoomCompiler,
+        ConventionDependency.androidxRoomKtx
     )
 
     // Okhttp

@@ -7,4 +7,5 @@ data class ProductEntity(
     val description: String?,
     val category: String?,
     val image: String?,
+    val quantity: Int = 1
 )
