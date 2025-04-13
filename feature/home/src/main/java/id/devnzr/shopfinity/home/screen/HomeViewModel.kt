@@ -2,15 +2,22 @@ package id.devnzr.shopfinity.home.screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import id.devnzr.domain.interfaces.AddCartsUseCase
 import id.devnzr.domain.interfaces.GetProductListUseCase
+import id.devnzr.domain.interfaces.GetUserUseCase
+import id.devnzr.domain.models.AllCartsEntity
+import id.devnzr.domain.models.ProductEntity
 import id.devnzr.extension.UiEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 internal class HomeViewModel(
-    private val getProductListUseCase: GetProductListUseCase
+    private val getProductListUseCase: GetProductListUseCase,
+    private val addCartsUseCase: AddCartsUseCase,
+    private val getUserUseCase: GetUserUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeState())
@@ -21,6 +28,7 @@ internal class HomeViewModel(
             is HomeEvent.OnGetAllProducts -> {
                 fetchProducts()
             }
+
             is HomeEvent.OnSearch -> {
                 _state.update { it.copy(searchTerm = event.query) }
                 applyFilter()
@@ -38,20 +46,29 @@ internal class HomeViewModel(
             is HomeEvent.OnToggleFilter -> {
                 _state.update { it.copy(isFilterExpanded = !_state.value.isFilterExpanded) }
             }
+
+            is HomeEvent.OnAddToCart -> {
+                addProductToCart(event.cart)
+            }
         }
     }
 
     private fun fetchProducts() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
-            getProductListUseCase().collect { result ->
+            combine(
+                getUserUseCase(id = "1"),
+                getProductListUseCase()
+            ) { user, product ->
+                Pair(user, product)
+            }.collect { pair ->
                 _state.update {
                     it.copy(
-                        resultProduct = result,
+                        resultUser = pair.first,
+                        resultProduct = pair.second,
                         isLoading = false
                     )
                 }
-                applyFilter()
             }
         }
     }
@@ -69,6 +86,25 @@ internal class HomeViewModel(
 
         _state.update {
             it.copy(categories = filtered)
+        }
+    }
+
+    private fun addProductToCart(cart: ProductEntity) {
+        viewModelScope.launch {
+            _state.update { it.copy(isLoading = true) }
+            val updatedCarts = addCartsUseCase(
+                AllCartsEntity(
+                    id = state.value.resultUser.data?.id ?: 0,
+                    userId = state.value.resultUser.data?.id.toString(),
+                    products = listOf(cart)
+                )
+            )
+            _state.update {
+                it.copy(
+                    isLoading = false,
+                    cartItems = updatedCarts
+                )
+            }
         }
     }
 }

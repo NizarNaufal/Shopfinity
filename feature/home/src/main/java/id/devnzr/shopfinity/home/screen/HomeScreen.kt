@@ -96,7 +96,8 @@ fun HomeScreen(
             selectedCategory = state.selectedCategory,
             onSelectCategory = { category ->
                 onEvent(HomeEvent.OnSelectCategory(category))
-            }
+            },
+            onEvent= onEvent
         )
     }
 }
@@ -107,6 +108,7 @@ private fun HomeScreenContent(
     state: HomeState,
     selectedCategory: String,
     onSelectCategory: (String) -> Unit,
+    onEvent: OnEvent
 ) {
     val products = state.resultProduct
         .let { (it as? ResultState.Success)?.data ?: emptyList() }
@@ -157,12 +159,13 @@ private fun HomeScreenContent(
             items(products) { product ->
                 ProductItemComponent(
                     product = product,
-                    modifier = Modifier.width(150.dp)
+                    modifier = Modifier.width(150.dp),
+                    onEvent = onEvent
                 )
             }
         }
 
-        if (state.isLoading) {
+        if (state.resultProduct is ResultState.Loading) {
             LoadingAnimation(
                 modifier = Modifier.align(Center),
                 circleSize = 16.dp,

@@ -2,10 +2,10 @@ package id.devnzr.domain.usecase
 
 import id.devnzr.data.interfaces.AuthRepositoryContract
 import id.devnzr.data.models.request.LoginRequest
-import id.devnzr.domain.models.LoginResult
 import id.devnzr.domain.interfaces.LoginUseCase
 import id.devnzr.domain.mapper.map
 import id.devnzr.domain.mapper.responseErrorToResultStateError
+import id.devnzr.domain.models.LoginResult
 import id.devnzr.domain.utils.ResultState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

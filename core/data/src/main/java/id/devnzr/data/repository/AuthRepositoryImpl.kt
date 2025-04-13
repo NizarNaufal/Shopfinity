@@ -19,4 +19,6 @@ class AuthRepositoryImpl(
     override suspend fun checkToken(): String {
         return dataStore.token.first()
     }
+
+    override suspend fun deleteToken() = dataStore.clearToken()
 }

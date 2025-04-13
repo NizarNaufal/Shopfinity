@@ -59,6 +59,5 @@ dependencies {
     implementation(projects.feature.account)
     implementation(projects.feature.home)
     implementation(projects.feature.login)
-    implementation(projects.feature.product)
     implementation(projects.feature.carts)
 }

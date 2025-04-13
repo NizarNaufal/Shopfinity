@@ -5,5 +5,6 @@ import id.devnzr.domain.utils.ResultState
 
 data class AccountState(
     val isLoading: Boolean = false,
-    val resultUser: ResultState<UserEntity> = ResultState.Loading()
+    val resultUser: ResultState<UserEntity> = ResultState.Loading(),
+    val resultLogout: ResultState<String> = ResultState.Idle()
 )

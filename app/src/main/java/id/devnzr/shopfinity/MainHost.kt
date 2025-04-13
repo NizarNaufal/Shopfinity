@@ -45,7 +45,7 @@ fun MainHost() {
             modifier = Modifier.padding(innerPadding)
         ) {
             homeScreen()
-            accountScreen(navController)
+            accountScreen()
             cartsScreen()
         }
     }

@@ -34,7 +34,6 @@
             <option value="$PROJECT_DIR$/feature/carts" />
             <option value="$PROJECT_DIR$/feature/home" />
             <option value="$PROJECT_DIR$/feature/login" />
-            <option value="$PROJECT_DIR$/feature/product" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

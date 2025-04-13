@@ -16,6 +16,6 @@ internal fun AccountHost() {
         navController = navController,
         startDestination = AccountNavigation,
     ) {
-        accountScreen(navController = navController)
+        accountScreen()
     }
 }

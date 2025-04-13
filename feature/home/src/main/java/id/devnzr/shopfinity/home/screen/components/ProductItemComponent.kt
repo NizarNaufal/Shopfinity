@@ -35,18 +35,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import id.devnzr.domain.models.ProductEntity
+import id.devnzr.extension.OnEvent
 import id.devnzr.shopfinity.home.R
+import id.devnzr.shopfinity.home.screen.HomeEvent
 
 @Composable
 internal fun ProductItemComponent(
     product: ProductEntity,
     modifier: Modifier = Modifier,
+    onEvent: OnEvent
 ) {
     Card(
         modifier = modifier
             .padding(4.dp)
             .clickable {
-//                navigator.navigate(ProductDetailsScreenDestination(product))
+                onEvent(HomeEvent.OnAddToCart(product))
             },
         elevation = 2.dp,
         backgroundColor = Color.White,

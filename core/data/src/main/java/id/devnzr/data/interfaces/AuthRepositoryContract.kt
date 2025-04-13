@@ -14,4 +14,5 @@ interface AuthRepositoryContract {
     ): LoginResponse
 
     suspend fun checkToken(): String
+    suspend fun deleteToken()
 }
