@@ -62,9 +62,13 @@ Each module is designed to be loosely coupled and independently testable. The pr
 
 ---
 
-## 🛠️ Getting Started
+## Video
 
-To get started with this project, follow these steps:
+
+
+https://github.com/user-attachments/assets/f9b15557-4de2-42f8-8fcb-9095da295492
+
+
 
 1. **Clone the repository**
    ```bash
