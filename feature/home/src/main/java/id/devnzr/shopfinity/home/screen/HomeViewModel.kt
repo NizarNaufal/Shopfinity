@@ -19,7 +19,7 @@ internal class HomeViewModel(
     fun onEvent(event: UiEvent) {
         when (event) {
             is HomeEvent.OnGetAllProducts -> {
-
+                fetchProducts()
             }
             is HomeEvent.OnSearch -> {
                 _state.update { it.copy(searchTerm = event.query) }

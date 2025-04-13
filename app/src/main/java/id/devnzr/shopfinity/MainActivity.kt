@@ -48,7 +48,7 @@ fun BottomNavHost() {
             startDestination = HomeNavigation::class.qualifiedName.orEmpty(),
             modifier = Modifier.padding(innerPadding)
         ) {
-            homeScreen(navController)
+            homeScreen()
             accountScreen(navController)
         }
     }
