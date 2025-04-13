@@ -1,31 +1,96 @@
 [versions]
+# Android SDK
+compileSdk = "35"
+targetSdk = "34"
+minSdk = "24"
+
+# Gradle & Kotlin
 agp = "8.6.0"
-kotlin = "1.9.0"
-coreKtx = "1.15.0"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.7"
-activityCompose = "1.10.1"
-composeBom = "2024.04.01"
+kotlin = "1.9.23"
+
+# KotlinX Libraries
+coroutines = "1.9.0"
+kotlinSerialization = "1.6.0"
+
+# AndroidX
+dataStore = "1.0.0"
+roomRuntime = "2.6.1"
+
+# UI Libraries
+coil = "2.3.0"
+lottieVersion = "6.0.1"
+
+# Dependency Injection
+koinAndroid = "3.4.2"
+koinCompose = "3.4.5"
+
+# Networking & Serialization
+gson = "2.6.0"
+protobufJavalite = "3.21.11"
+
+# Debugging
+chucker = "3.5.2"
+
+#KSP
+ksp = "1.9.23-1.0.20"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+# KotlinX
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
+
+# AndroidX DataStore
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
+androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "dataStore" }
+
+# Room
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+
+# Coil & Lottie (UI)
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieVersion" }
+
+# Koin (DI)
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinCompose" }
+koin-navigation-compose = { module = "io.insert-koin:koin-androidx-compose-navigation", version.ref = "koinCompose" }
+
+# Networking
+gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gson" }
+protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobufJavalite" }
+
+# Debugging
+chucker = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
+chucker-no-op = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+
+[bundles]
+supportDependencies = [
+    "coil",
+    "lottie-compose"
+]
+
+koinDependencies = [
+    "koin-android",
+    "koin-compose",
+    "koin-navigation-compose"
+]
+
+roomDependencies = [
+    "androidx-room-ktx",
+    "androidx-room-runtime"
+]
+
+coroutinesDependencies = [
+    "coroutines-core",
+    "coroutines-android"
+]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
