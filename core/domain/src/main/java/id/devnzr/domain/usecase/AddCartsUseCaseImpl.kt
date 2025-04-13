@@ -1,6 +1,6 @@
 package id.devnzr.domain.usecase
 
-import id.devnzr.data.interfaces.CartsRepositoryContract
+import id.devnzr.data.interfaces.CartsRepository
 import id.devnzr.data.models.Carts
 import id.devnzr.data.models.Products
 import id.devnzr.domain.interfaces.AddCartsUseCase
@@ -8,7 +8,7 @@ import id.devnzr.domain.models.AllCartsEntity
 import id.devnzr.domain.models.ProductEntity
 
 class AddCartsUseCaseImpl(
-    private val repository: CartsRepositoryContract
+    private val repository: CartsRepository
 ) : AddCartsUseCase {
 
     override suspend fun invoke(cart: AllCartsEntity): List<AllCartsEntity> {

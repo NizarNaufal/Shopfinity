@@ -47,7 +47,7 @@ internal fun ProductItemComponent(
     modifier: Modifier = Modifier,
     onEvent: OnEvent
 ) {
-   val context = LocalContext.current
+    val context = LocalContext.current
 
     Card(
         modifier = modifier
@@ -143,6 +143,5 @@ internal fun ProductItemComponent(
 
             Spacer(modifier = Modifier.height(12.dp))
         }
-
     }
 }

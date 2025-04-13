@@ -2,6 +2,6 @@ package id.devnzr.data.interfaces
 
 import id.devnzr.data.models.Products
 
-interface ProductRepositoryContract {
+interface ProductRepository {
     suspend fun fetchProductList(): List<Products>
 }

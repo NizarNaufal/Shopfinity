@@ -1,6 +1,6 @@
 package id.devnzr.domain.usecase
 
-import id.devnzr.data.interfaces.ProductRepositoryContract
+import id.devnzr.data.interfaces.ProductRepository
 import id.devnzr.domain.utils.ResultState
 import id.devnzr.domain.models.ProductEntity
 import id.devnzr.domain.interfaces.GetProductListUseCase
@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class GetProductListUseCaseImpl(
-    private val productRepository: ProductRepositoryContract
+    private val productRepository: ProductRepository
 ) : GetProductListUseCase {
 
     override fun invoke(): Flow<ResultState<List<ProductEntity>>> = flow {

@@ -1,13 +1,13 @@
 package id.devnzr.domain.usecase
 
-import id.devnzr.data.interfaces.AuthRepositoryContract
+import id.devnzr.data.interfaces.AuthRepository
 import id.devnzr.domain.interfaces.GetTokenUseCase
 import id.devnzr.domain.mapper.responseErrorToResultStateError
 import id.devnzr.domain.utils.ResultState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class GetTokenUseCaseImpl(private val authRepository: AuthRepositoryContract) : GetTokenUseCase {
+class GetTokenUseCaseImpl(private val authRepository: AuthRepository) : GetTokenUseCase {
     override fun invoke(): Flow<ResultState<String>> = flow {
         emit(ResultState.Loading())
         runCatching {
