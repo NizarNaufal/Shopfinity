@@ -34,6 +34,7 @@ Shopfinity is a modern e-commerce Android application developed with clean archi
     - `domain/` - UseCases and domain models
     - `extension/` - Kotlin extension functions
     - `network/` - API configuration, service interfaces
+    - `ui-kit/` - Theme, Colors, Typography
 
 - `feature/`  
   Modularized features for better separation of concerns.
@@ -41,7 +42,8 @@ Shopfinity is a modern e-commerce Android application developed with clean archi
     - `account/` - Account management UI and logic
     - `home/` - Home screen display
     - `login/` - Authentication and sign-in feature
-    - `product/` - Product list and detail screens
+    - `detail/` - detail product screens
+    - `carts/` - Cart screen with Room DB
 
 - `build-logic/`  
   Contains custom Gradle convention plugins to standardize module configurations (e.g., Compose setup, Kotlin config, testing setup).
