@@ -2,9 +2,9 @@ package id.devnzr.data.di
 
 import id.devnzr.data.api.AuthApi
 import id.devnzr.data.api.ProductApi
-import id.devnzr.data.interfaces.AuthRepositoryContract
-import id.devnzr.data.interfaces.CartsRepositoryContract
-import id.devnzr.data.interfaces.ProductRepositoryContract
+import id.devnzr.data.interfaces.AuthRepository
+import id.devnzr.data.interfaces.CartsRepository
+import id.devnzr.data.interfaces.ProductRepository
 import id.devnzr.data.repository.AuthRepositoryImpl
 import id.devnzr.data.repository.CartsRepositoryImpl
 import id.devnzr.data.repository.ProductRepositoryImpl
@@ -22,13 +22,13 @@ val dataSourceModule = module {
 }
 
 val repositoryModule = module {
-    single<ProductRepositoryContract> {
+    single<ProductRepository> {
         ProductRepositoryImpl(get())
     }
-    single<CartsRepositoryContract> {
+    single<CartsRepository> {
         CartsRepositoryImpl(get())
     }
-    single<AuthRepositoryContract> {
+    single<AuthRepository> {
         AuthRepositoryImpl(get(), get())
     }
 }

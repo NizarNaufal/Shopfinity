@@ -31,7 +31,7 @@ internal class HomeViewModel(
 
             is HomeEvent.OnSearch -> {
                 _state.update { it.copy(searchTerm = event.query) }
-                applyFilter()
+//                applyFilter()
             }
 
             is HomeEvent.OnSubmitSearch -> {
@@ -40,7 +40,8 @@ internal class HomeViewModel(
 
             is HomeEvent.OnSelectCategory -> {
                 _state.update { it.copy(selectedCategory = event.category) }
-                applyFilter()
+                // need function to selected and show by category
+                applyCategoryFilter(event.category)
             }
 
             is HomeEvent.OnToggleFilter -> {
@@ -53,6 +54,19 @@ internal class HomeViewModel(
         }
     }
 
+    private fun applyCategoryFilter(selectedCategory: String) {
+        val allProducts = _state.value.resultProduct.data ?: emptyList()
+        val filteredProducts = if (selectedCategory.isNotBlank()) {
+            allProducts.filter { it.category == selectedCategory }
+        } else {
+            allProducts
+        }
+
+        _state.update {
+            it.copy(selectedByCategories = filteredProducts)
+        }
+    }
+
     private fun fetchProducts() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
@@ -60,12 +74,18 @@ internal class HomeViewModel(
                 getUserUseCase(id = "1"),
                 getProductListUseCase()
             ) { user, product ->
-                Pair(user, product)
-            }.collect { pair ->
-                _state.update {
-                    it.copy(
-                        resultUser = pair.first,
-                        resultProduct = pair.second,
+                user to product
+            }.collect { (user, product) ->
+                val selectedCategory = product.data?.firstOrNull()?.category.orEmpty()
+                val selectedByCategories = product.data?.filter { it.category == selectedCategory }
+                val categories = product.data?.map { it.category }?.distinct()
+                _state.update { state ->
+                    state.copy(
+                        resultUser = user,
+                        resultProduct = product,
+                        selectedCategory = selectedCategory,
+                        selectedByCategories = selectedByCategories,
+                        categories = categories,
                         isLoading = false
                     )
                 }
@@ -73,21 +93,6 @@ internal class HomeViewModel(
         }
     }
 
-    private fun applyFilter() {
-        val allProducts = _state.value.resultProduct.data
-        val category = _state.value.selectedCategory
-        val query = _state.value.searchTerm.lowercase()
-
-        val filtered = allProducts?.filter { product ->
-            val matchCategory = category.isBlank() || product.category == category
-            val matchName = query.isBlank() || product.title?.lowercase()?.contains(query) == true
-            matchCategory && matchName
-        }
-
-        _state.update {
-            it.copy(categories = filtered)
-        }
-    }
 
     private fun addProductToCart(cart: ProductEntity) {
         viewModelScope.launch {

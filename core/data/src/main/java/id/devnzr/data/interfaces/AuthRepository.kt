@@ -4,7 +4,7 @@ import id.devnzr.data.models.request.LoginRequest
 import id.devnzr.data.models.response.LoginResponse
 import id.devnzr.data.models.response.UserResponse
 
-interface AuthRepositoryContract {
+interface AuthRepository {
     suspend fun fetchUser(
         id: String,
     ): UserResponse

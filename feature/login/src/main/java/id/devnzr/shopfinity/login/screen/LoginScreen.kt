@@ -16,10 +16,9 @@ fun LoginScreen(
 
     Scaffold(
         scaffoldState = scaffoldState,
-        topBar = {
-            LoginHeader()
-        }
+        topBar = { LoginHeader() }
     ) { padding ->
+
         LoginForm(
             state = state,
             onEvent = onEvent,

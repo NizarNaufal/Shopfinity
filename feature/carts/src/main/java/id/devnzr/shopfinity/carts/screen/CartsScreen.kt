@@ -40,19 +40,16 @@ fun CartScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
-            TopAppBar(
-                backgroundColor = Color.White,
-                elevation = 1.dp,
-                title = {
-                    Text(
-                        text = "My Cart",
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = 18.sp
-                    )
-                }
-            )
+            TopAppBar(backgroundColor = Color.White, elevation = 1.dp, title = {
+                Text(
+                    text = "My Cart",
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 18.sp,
+                    color = Color.Black
+                )
+            })
         },
         backgroundColor = Color.White
     ) { paddingValues ->
@@ -110,7 +107,7 @@ private fun CartScreenContent(
                         modifier = Modifier.size(220.dp)
                     )
                     Spacer(modifier = Modifier.height(16.dp))
-                    Text("Cart is Empty", fontSize = 16.sp)
+                    Text("Cart is Empty", fontSize = 16.sp, color = Color.Black)
                 }
             }
 

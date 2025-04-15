@@ -27,4 +27,5 @@ dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(projects.core.extension)
     implementation(libs.kotlinx.serialization.json)
+    implementation(projects.core.uikit)
 }

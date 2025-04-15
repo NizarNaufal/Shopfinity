@@ -38,6 +38,7 @@ internal fun CartItemComponent(
             .height(130.dp)
             .padding(8.dp),
         shape = RoundedCornerShape(8.dp),
+        backgroundColor = Color.White,
         elevation = 4.dp
     ) {
         Row {
@@ -62,14 +63,15 @@ internal fun CartItemComponent(
             Column(
                 modifier = Modifier
                     .weight(2f)
-                    .padding(5.dp)
+                    .padding(10.dp)
             ) {
                 Text(
-                    text = cartItem.title.orEmpty(),
+                    text = cartItem.title,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.height(5.dp))
@@ -88,7 +90,8 @@ internal fun CartItemComponent(
                     textAlign = TextAlign.End,
                     text = "${cartItem.quantity} Pc",
                     fontSize = 14.sp,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    color = Color.Black
                 )
             }
         }

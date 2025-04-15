@@ -1,6 +1,6 @@
 package id.devnzr.data.repository
 
-import id.devnzr.data.interfaces.CartsRepositoryContract
+import id.devnzr.data.interfaces.CartsRepository
 import id.devnzr.data.models.Carts
 import id.devnzr.data.models.Products
 import id.devnzr.database.dao.CartDao
@@ -9,7 +9,7 @@ import id.devnzr.database.entities.ProductsEntity
 
 class CartsRepositoryImpl(
     private val cartDao: CartDao
-) : CartsRepositoryContract {
+) : CartsRepository {
 
     override suspend fun fetchAllCarts(): List<Carts> {
         val cartsWithProducts = cartDao.getAllCartsWithProducts()

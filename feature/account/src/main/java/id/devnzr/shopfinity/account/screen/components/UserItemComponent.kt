@@ -34,9 +34,10 @@ fun UserItemComponent(
     modifier: Modifier = Modifier,
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier.padding(start = 10.dp, end = 10.dp),
         shape = RoundedCornerShape(8.dp),
-        elevation = 3.dp
+        elevation = 3.dp,
+        backgroundColor = Color.White
     ) {
         Row {
             AsyncImage(
@@ -55,7 +56,7 @@ fun UserItemComponent(
             Column(
                 modifier = Modifier
                     .weight(2f)
-                    .padding(5.dp),
+                    .padding(10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 Text(
@@ -63,7 +64,8 @@ fun UserItemComponent(
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     fontSize = 18.sp,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.Black
                 )
                 Spacer(modifier = Modifier.height(5.dp))
                 Text(
@@ -74,7 +76,6 @@ fun UserItemComponent(
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-
                 Button(
                     modifier = Modifier.align(End),
                     onClick = {
@@ -90,7 +91,8 @@ fun UserItemComponent(
                             .padding(3.dp),
                         fontSize = 11.sp,
                         textAlign = TextAlign.Center,
-                        text = "Edit profile"
+                        text = "Edit profile",
+                        color = Color.Black
                     )
                 }
             }

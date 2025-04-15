@@ -1,6 +1,6 @@
 package id.devnzr.domain.usecase
 
-import id.devnzr.data.interfaces.AuthRepositoryContract
+import id.devnzr.data.interfaces.AuthRepository
 import id.devnzr.data.models.request.LoginRequest
 import id.devnzr.domain.interfaces.LoginUseCase
 import id.devnzr.domain.mapper.map
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class LoginUseCaseImpl(
-    private val authRepository: AuthRepositoryContract
+    private val authRepository: AuthRepository
 ) : LoginUseCase {
     override fun invoke(
         username: String,
@@ -20,8 +20,8 @@ class LoginUseCaseImpl(
         emit(ResultState.Loading())
         runCatching {
             authRepository.login(LoginRequest(username, password))
-        }.onSuccess { products ->
-            emit(ResultState.Success(data = products.map()))
+        }.onSuccess { login ->
+            emit(ResultState.Success(data = login.map()))
         }.onFailure { throwable ->
             emit(responseErrorToResultStateError(throwable))
         }

@@ -12,7 +12,7 @@ import org.koin.androidx.compose.koinViewModel
 @Serializable
 object HomeNavigation : Screen
 
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(onNavigateToDetailProduct: (String) -> Unit) {
     composable<HomeNavigation> {
         val viewModel: HomeViewModel = koinViewModel()
         val state: HomeState by viewModel.state.collectAsStateWithLifecycle()
@@ -24,6 +24,11 @@ fun NavGraphBuilder.homeScreen() {
         HomeScreen(
             state = state,
             onEvent = { event ->
+                when (event) {
+                    is HomeEvent.OnNavigateToDetailProduct -> {
+                        onNavigateToDetailProduct(event.idProduct)
+                    }
+                }
                 viewModel.onEvent(event)
             }
         )
