@@ -20,8 +20,8 @@ class LoginUseCaseImpl(
         emit(ResultState.Loading())
         runCatching {
             authRepository.login(LoginRequest(username, password))
-        }.onSuccess { products ->
-            emit(ResultState.Success(data = products.map()))
+        }.onSuccess { login ->
+            emit(ResultState.Success(data = login.map()))
         }.onFailure { throwable ->
             emit(responseErrorToResultStateError(throwable))
         }
