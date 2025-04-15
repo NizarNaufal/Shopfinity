@@ -59,7 +59,8 @@ fun AccountScreen(
                         textAlign = TextAlign.Center,
                         text = "My Profile",
                         fontSize = 18.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color.Black
                     )
                 }
             )
@@ -128,9 +129,9 @@ private fun AccountScreenContent(
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 4.dp),
-                border = BorderStroke(0.3.dp, Color.Gray),
-                shape = RoundedCornerShape(8.dp)
+                    .padding(horizontal = 10.dp, vertical = 8.dp),
+                shape = RoundedCornerShape(8.dp),
+                backgroundColor = Color.White
             ) {
                 Row(
                     Modifier
@@ -146,7 +147,7 @@ private fun AccountScreenContent(
                             fontWeight = FontWeight.SemiBold,
                             fontSize = 16.sp
                         )
-                        Spacer(modifier = Modifier.height(4.dp))
+                        Spacer(modifier = Modifier.height(8.dp))
                         Text(
                             text = item.content,
                             color = Color.Gray,
@@ -156,8 +157,9 @@ private fun AccountScreenContent(
                     }
                     IconButton(onClick = { /* Handle click */ }) {
                         Icon(
+                            tint = Color.Black,
                             imageVector = Icons.AutoMirrored.Outlined.ArrowForward,
-                            contentDescription = null
+                            contentDescription = null,
                         )
                     }
                 }

@@ -28,4 +28,5 @@ dependencies {
     implementation(projects.core.extension)
     implementation(libs.bundles.supportDependencies)
     implementation(libs.kotlinx.serialization.json)
+    implementation(projects.core.uikit)
 }

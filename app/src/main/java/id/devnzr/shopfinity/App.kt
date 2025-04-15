@@ -10,6 +10,7 @@ import id.devnzr.domain.di.useCaseModule
 import id.devnzr.network.di.networkModule
 import id.devnzr.shopfinity.account.di.accountViewModelModule
 import id.devnzr.shopfinity.carts.di.cartsViewModelModule
+import id.devnzr.shopfinity.detail.di.detailViewModelModule
 import id.devnzr.shopfinity.home.di.homeViewModelModule
 import id.devnzr.shopfinity.login.di.loginViewModelModule
 import id.devnzr.shopfinity.splash.di.splashViewModelModule
@@ -40,7 +41,8 @@ class App : Application() {
             accountViewModelModule,
             loginViewModelModule,
             splashViewModelModule,
-            cartsViewModelModule
+            cartsViewModelModule,
+            detailViewModelModule
         )
     }
 }

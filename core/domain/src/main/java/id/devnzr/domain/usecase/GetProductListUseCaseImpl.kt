@@ -1,11 +1,11 @@
 package id.devnzr.domain.usecase
 
 import id.devnzr.data.interfaces.ProductRepository
-import id.devnzr.domain.utils.ResultState
-import id.devnzr.domain.models.ProductEntity
 import id.devnzr.domain.interfaces.GetProductListUseCase
 import id.devnzr.domain.mapper.mapProducts
 import id.devnzr.domain.mapper.responseErrorToResultStateError
+import id.devnzr.domain.models.ProductEntity
+import id.devnzr.domain.utils.ResultState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

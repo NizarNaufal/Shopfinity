@@ -5,4 +5,5 @@ import id.devnzr.data.interfaces.ProductRepository
 
 class ProductRepositoryImpl(private val api: ProductApi) : ProductRepository {
     override suspend fun fetchProductList() = api.fetchProductList()
+    override suspend fun fetchDetailProduct(id: String) = api.fetchDetailProduct(id)
 }

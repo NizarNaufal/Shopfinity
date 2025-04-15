@@ -56,8 +56,10 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.core.network)
     implementation(projects.core.extension)
+    implementation(projects.core.uikit)
     implementation(projects.feature.account)
     implementation(projects.feature.home)
     implementation(projects.feature.login)
     implementation(projects.feature.carts)
+    implementation(projects.feature.detail)
 }

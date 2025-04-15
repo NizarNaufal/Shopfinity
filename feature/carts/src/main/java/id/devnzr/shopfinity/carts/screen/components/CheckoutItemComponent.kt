@@ -1,5 +1,6 @@
 package id.devnzr.shopfinity.carts.screen.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,6 +13,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -23,27 +25,31 @@ internal fun CheckoutItemComponent(state: CartsState) {
         cart.products.sumOf { it.quantity }
     }
     val totalPrice = state.cartItems.sumOf { cart ->
-        cart.products.sumOf { (it.price ?: 0.0) * it.quantity }
+        cart.products.sumOf { it.price * it.quantity }
     }
 
-    Column(Modifier.padding(16.dp)) {
+    Column(
+        Modifier
+            .padding(16.dp)
+            .background(Color.Transparent)
+    ) {
         Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween) {
-            Text("$totalItems items")
-            Text("$$totalPrice", fontWeight = FontWeight.Bold)
+            Text("$totalItems items", color = Color.Black)
+            Text("$$totalPrice", fontWeight = FontWeight.Bold, color = Color.Black)
         }
 
         Spacer(modifier = Modifier.height(8.dp))
 
         Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween) {
-            Text("Shipping Fee")
-            Text("$60.00", fontWeight = FontWeight.Bold)
+            Text("Shipping Fee", color = Color.Black)
+            Text("$60.00", fontWeight = FontWeight.Bold, color = Color.Black)
         }
 
         Spacer(modifier = Modifier.height(8.dp))
 
         Row(Modifier.fillMaxWidth(), Arrangement.SpaceBetween) {
-            Text("Total")
-            Text("$${totalPrice + 60.0}", fontWeight = FontWeight.Bold)
+            Text("Total", color = Color.Black)
+            Text("$${totalPrice + 60.0}", fontWeight = FontWeight.Bold, color = Color.Black)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
