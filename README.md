@@ -73,7 +73,13 @@ Each module is designed to be loosely coupled and independently testable. The pr
 
 | Login Page                            | Profile Page               |
 |----------------------------------------|-----------------------------------------|
-| ![Login](https://github.com/user-attachments/assets/fbe14e0f-0fcb-4441-9e34-fb233b10861e) | ![Profile](https://github.com/user-attachments/assets/56932594-66b2-49ce-9f3c-82f745c0dcc3) |
+| ![Login](https://github.com/user-attachments/assets/7d1dc6bb-a404-4e1c-a851-1337fd47bf80) | ![Profile](https://github.com/user-attachments/assets/56932594-66b2-49ce-9f3c-82f745c0dcc3) |
+
+| Detail Page
+|---------------------------------------------------------------------------------|
+| ![Detail](https://github.com/user-attachments/assets/7ebd814a-2334-4fa8-afdc-cdcfe3063d93)
+
+
 
 1. **Clone the repository**
    ```bash
