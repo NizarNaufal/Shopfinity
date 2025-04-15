@@ -9,4 +9,5 @@ sealed class LoginEvent : UiEvent {
     data object OnForgotPassword : LoginEvent()
     data object OnRegister : LoginEvent()
     data object OnSubmit : LoginEvent()
+    data object OnDismissError : LoginEvent()
 }
