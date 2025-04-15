@@ -65,20 +65,27 @@ Each module is designed to be loosely coupled and independently testable. The pr
 
 ## 📸 **Screenshots**
 
-| Home Screen                           | Cart Page                            |
-|----------------------------------------|-----------------------------------------|
-| 
 
-![Home]https://github.com/user-attachments/assets/39e1463d-1674-4ee0-80d6-4d1d02c7bbc8) | ![Cart](https://github.com/user-attachments/assets/a9d2ba93-dc8f-4a24-ab14-d86538c7dd4c) |
 
-| Login Page                            | Profile Page               |
-|----------------------------------------|-----------------------------------------|
-| ![Login](https://github.com/user-attachments/assets/7d1dc6bb-a404-4e1c-a851-1337fd47bf80) | ![Profile](https://github.com/user-attachments/assets/56932594-66b2-49ce-9f3c-82f745c0dcc3) |
+https://github.com/user-attachments/assets/ae5dfb5e-8dec-4fd7-ad69-2b48a740f5ae
 
-| Detail Page
-|---------------------------------------------------------------------------------|
-| ![Detail](https://github.com/user-attachments/assets/7ebd814a-2334-4fa8-afdc-cdcfe3063d93)
 
+
+https://github.com/user-attachments/assets/3c19177a-aee0-429b-b173-384618dcd10b
+
+
+
+https://github.com/user-attachments/assets/b1c5e82e-0814-4175-9acf-94448c5d2ffa
+
+
+
+https://github.com/user-attachments/assets/e434b69a-7c40-4913-89b9-f558b9b8f41d
+
+
+
+https://github.com/user-attachments/assets/8b104b26-016b-4d46-a796-d3d2668b37ef
+
+                                    |
 
 
 1. **Clone the repository**
