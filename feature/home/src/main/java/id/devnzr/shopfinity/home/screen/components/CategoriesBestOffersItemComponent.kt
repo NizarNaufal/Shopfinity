@@ -44,14 +44,16 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import id.devnzr.extension.OnEvent
 import id.devnzr.shopfinity.core.uikit.black
 import id.devnzr.shopfinity.core.uikit.paledark
 import id.devnzr.shopfinity.core.uikit.texttitlewhite
 import id.devnzr.shopfinity.core.uikit.white
+import id.devnzr.shopfinity.home.screen.HomeEvent
 import id.devnzr.shopfinity.home.screen.HomeState
 
 @Composable
-fun CategoriesBestOffersItemComponent(state: HomeState) {
+fun CategoriesBestOffersItemComponent(state: HomeState, onEvent: OnEvent) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -91,6 +93,9 @@ fun CategoriesBestOffersItemComponent(state: HomeState) {
                     image = items.image,
                     title = items.title,
                     price = items.price.toString(),
+                    onClick = {
+                        onEvent(HomeEvent.OnNavigateToDetailProduct(items.id.toString()))
+                    }
                 )
             }
         }
@@ -103,11 +108,14 @@ fun CategoryBestOffersItems(
     title: String = "",
     subtitle: String = "",
     price: String = "",
+    onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 12.dp),
+            .padding(vertical = 12.dp).clickable {
+                onClick()
+            },
         elevation = 4.dp,
         shape = RoundedCornerShape(12.dp),
         backgroundColor = Color.White

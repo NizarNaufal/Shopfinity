@@ -48,7 +48,7 @@ fun HomeScreen(
                     onEvent
                 )
                 Spacer(modifier = Modifier.padding(24.dp))
-                CategoriesBestOffersItemComponent(state)
+                CategoriesBestOffersItemComponent(state, onEvent)
                 Spacer(modifier = Modifier.padding(24.dp))
             }
         }
